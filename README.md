@@ -1,13 +1,13 @@
-#Arivistika
+# Arivistika
 
 
 ![Company logo](images/logo-mini.png)
 
-#### Site:
+## Site:
 https://arivistika.ru/ (продажа курсов ВЭД)
 
 
-#### Description:
+## Description:
 В этом репозитории:
 - Демо <b>автотесты</b> на <b>Java</b>
 - После выполения каждого теста создается скриншот
@@ -16,7 +16,7 @@ https://arivistika.ru/ (продажа курсов ВЭД)
 - ~~Уведомлене о результах тестов поступают в Telegramm (в работе)~~
 
 
-#### Stack:
+## Stack:
 <p align="center">
 <a href="https://www.jetbrains.com/idea/"><img src="images/logo/Idea.svg" width="50" height="50"  alt="IDEA" title="olgakos github IDEA"/></a>
 <a href="https://www.java.com/"><img src="images/logo/Java.svg" width="50" height="50"  alt="Java" title="olgakos github Java"/></a>
@@ -35,18 +35,18 @@ https://arivistika.ru/ (продажа курсов ВЭД)
 - Для написания UI-тестов используется фреймворк `Selenide`, совремнная «обёртка» вокруг `Selenium WebDriver`
 - Библиотека модульного тестирования: `JUnit 5`
 - `Jenkins` выполняет удаленный запуск тестов в графическом интерфейсе. Установки дополнительных приложений на компьютер пользователя не требуется.
-- `Selenoid` запускает браузеров в контейнерах `Docker` (и записывает видео)
+- `Selenoid` запускает браузер с тестами в контейнерах `Docker` (и записывает видео)
 - Фреймворк`Allure Report` формирует графический отчет о прохождении тестов (см. скрины ниже)
 - ~~После завершения выполения тестов `Telegram Bot` отправляет в `Telegram` краткий вариант Allure Report~~
 
-#### Tests:
+## Tests:
 - [x] "Проверка уведомления об ошибке залогина"
 - [x] "Проверка соответствия текстов на главной странице сайта"
 - [x] "Заполнение формы регистрации.
 - [x] "Проверка заголовка на странице "Расписание"
 - [x] "Проверка оплаты видеоурока "Курс PRO Декларирование" (Robokassa)
 
-#### Как запустить тесты?
+## Как запустить тесты:
 ###### Вариант 1. Локальный запуск 
 1. Скачать проект и открыть в IntelliJ IDEA
 2. Запустить тесты командой из терминала: 
@@ -64,7 +64,7 @@ gradle allureServe
 Результат: откроется страница с отчетом Allure Report
 
 ###### Вариант 2. Удаленный запуск тестов (в Jenkins)
-1. <i>Зарегистрированным</i> пользователем перейти на страницу сборки проекта по ссылке: <a target="_blank" href="https://jenkins.autotests.cloud/job/Demo-Arivistika-Java/">Jenkins Demo-Arivistika-Java</a>
+1. <i>Зарегистрированным</i> пользователем перейти(*) на страницу сборки проекта по ссылке: <a target="_blank" href="https://jenkins.autotests.cloud/job/Demo-Arivistika-Java/">Jenkins</a> 
 2. Выбрать желаемые "параметры сборки" в графическом интерфейсе или оставить как есть.
 3. Запустить выполнение тестов кнопкой "Собрать" (внизу страницы)
 4. Убедиться, что в блоке История сборок (напротив номера #) появился желтый значок Allure Report. (Если сборка запущена, но значок не виден, убедиться, что меню "История сброк" раскрыто)
@@ -72,9 +72,9 @@ gradle allureServe
 <br>Результат: откроется страница с отчетом Allure Report
 
 ![Jenkins](images/screens/screen_jenkins.jpg)
+(*) NB! Сейчас срок хранения сборки на сервере ~60 дней. Ссылка для удаленного демо-запуска может оказаться недоступной после 20.09.2023 :( 
 
-
-#### Пример Allure отчета:
+## Пример отчета
 
 ###### Главный экран (Owerwiev)
 <img title="Allure Owerwiev" src="images/screens/screen_allure1.jpg" alt="Allure Owerwiev">
@@ -82,21 +82,24 @@ gradle allureServe
 ###### Страница со списком тестов (Suites)
 <img title="Allure Suites" src="images/screens/screen_allure2.jpg" alt="Allure Suites">
   
-###### Пример описания пройденного :) теста
+###### Пример описания пройденного  теста :)
 ![Allure](images/screens/screen_passed.jpg)
 
-###### Пример описания упавшего :( теста
+###### Пример описания упавшего теста :(
 ![Allure](images/screens/screen_failed.jpg)
 
-####  Видео прохождения тестов
+## Видео тестов
+Видеозапись каждого теста генерируется с помощью `Selenoid`, после успешного запуска контейнера c тестами в `Docker`. 
+
+<br>Образец:
 ![Video test](images/screens/video_test_fill_form.gif)
 
 
-
-#### Отчет в Telegram
+## Отчет в Telegram
+###### todo
 После завершения сборки специальный Telegram-бот отправляет сообщение с отчетом.
 Чтобы видеть его увидеть, вступите (временно) группу `OlgaKos Bot_Group`
-todo
+
 
 ------------
-ver 2023-07-19
+ver 2023-07-20
