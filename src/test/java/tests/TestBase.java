@@ -24,8 +24,8 @@ public class TestBase {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         Configuration.browserSize = size;
         Configuration.browser = browser;
-        //Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub"; // для УДАЛЕННОГО запуска
 
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub"; // для УДАЛЕННОГО запуска
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
