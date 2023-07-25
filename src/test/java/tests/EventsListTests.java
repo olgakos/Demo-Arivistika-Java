@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -14,6 +15,7 @@ public class EventsListTests extends TestBase {
     EventsListPage events = new EventsListPage();
 
     @Test
+    @Owner("Olga Kos")
     @Tag("eventsTests")
     @DisplayName("Проверка заголовка на странице \"Расписание\"")
     void searchEvents() {
