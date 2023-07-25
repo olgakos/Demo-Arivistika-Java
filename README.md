@@ -100,4 +100,4 @@ gradle allureServe
 in work https://allure.autotests.cloud/project/3565/dashboards
 
 ------------
-ver 2023-07-25 home
+ver 2023-07-25 home1
