@@ -7,10 +7,10 @@ https://arivistika.ru/ (продажа курсов ВЭД)
 ## Description:
 В этом репозитории:
 - Проект с <b>автотестами</b> на <b>Java</b>
-- Настроен запуска тестов "одной кнопкой" с любого компьютера со стабильным интернетом. Установка ПО не требуется.
-- Визуальный отчет о прохождении тестов. Отчет может сформировать любой сотрудник, без специальных знаний локализовать проблему и передать информацию разработчикам.
+- Настроен запуск тестов "одной кнопкой" с любого компьютера со стабильным интернетом. Установка ПО не требуется.
+- Визуальный отчет о прохождении тестов. Отчет может сформировать любой сотрудник: оценить тестовое покрытие и/или  передать разработчикам информацию об обнаруженной проблеме.
 - После выполнения каждого теста записывается видео и скриншот экрана
-- ~~Уведомление о результатах тестов отсываются в Telegramm группу (в работе)~~
+- Уведомление о результатах тестов в <b>Telegramm</b> группу
 
 ## Stack:
 <p align="center">
@@ -23,6 +23,8 @@ https://arivistika.ru/ (продажа курсов ВЭД)
 <a href="https://aerokube.com/selenoid/"><img src="images/logo/Selenoid.svg" width="50" height="50"  alt="Selenoid" title="olgakos github Selenoid"/></a>
 <a href="https://github.com/allure-framework/allure2"><img src="images/logo/Allure.svg" width="50" height="50"  alt="Allure" title="olgakos github Allure"/></a>
 <a href="https://www.jenkins.io/"><img src="images/logo/Jenkins.svg" width="50" height="50"  alt="Jenkins" title="olgakos github Jenkins"/></a>
+<a href="https://docs.qameta.io/allure-testops/"><img width="50" height="50"  alt="AllureTestOps" src="images/logo/Allure_TO.svg" title="olgakos github AllureTestOps"></a>
+<a href="https://www.atlassian.com/ru/software/jira"><img width="50" height="50"  alt="Jira" src="images/logo/Jira.svg" title="olgakos github Jira"></a>     
 <a href="https://web.telegram.org/"><img width="50" height="50"  alt="Telegram" src="images/logo/Telegram.svg" title="olgakos github Telegram"></a>
 </p>
 
@@ -33,6 +35,7 @@ https://arivistika.ru/ (продажа курсов ВЭД)
 - `Jenkins` выполняет удаленный запуск тестов в графическом интерфейсе. Установки дополнительных приложений на компьютер пользователя не требуется.
 - `Selenoid` запускает браузер с тестами в контейнерах `Docker` (и записывает видео)
 - Фреймворк`Allure Report` собирает графический отчет о прохождении тестов
+- Пример интеграции с `AllureTestOps`, (коммерческим) сервисом удаленного запуска и сортировки автотестов. AllureTestOps это Allure Report c расширенным функционалом
 - После завершения тестов `Telegram Bot` отправляет в `Telegram` краткий вариант Allure Report
 
 ## Tests:
@@ -62,16 +65,18 @@ gradle allureServe
 
 ###### Вариант 2. Удаленный запуск тестов (в Jenkins)
 1. <i>Зарегистрированным</i>* пользователем перейти** на страницу сборки проекта по ссылке: <b><a target="_blank" href="https://jenkins.autotests.cloud/job/Demo-Arivistika-Java/">Jenkins</a></b>
-2. ~~Выбрать желаемые "параметры сборки" в графическом интерфейсе или оставить как есть.~~
-3. Запустить выполнение тестов кнопкой "Собрать" (внизу страницы)
+2. Выбрать желаемые "параметры сборки" в графическом интерфейсе или оставить как есть.
+3. Запустить выполнение тестов кнопкой "Собрать..."
 4. Убедиться, что в блоке История сборок (напротив номера #) появился желтый значок Allure Report. (Если сборка запущена, но значок не виден, убедиться, что меню "История сброк" раскрыто)
 5. Кликнуть по значку Allure Report
 <br>Результат: откроется страница с отчетом Allure Report
 <br>* Незарегистрированным пользователем можно открывть и изучить последний ранее сформированный отчет (стрелка №2 на скриншоте)
-<br>** NB! Срок хранения сборки на сервере ~60 дней. Ссылка может оказаться недоступной после 24.09.2023 :(
+<br>** NB! Срок хранения сборки на сервере ~60 дней. Ссылка может оказаться недоступной после 26.09.2023 :(
 
 ![Jenkins](images/screens/screen_jenkins_ar.jpg)
-(*) NB! Сейчас срок хранения сборки на сервере ~60 дней. Ссылка для удаленного демо-запуска может оказаться недоступной после 25.09.2023 :( 
+![Jenkins](images/screens/screen_jenkins_Reg.jpg)
+![Jenkins](images/screens/screen_jenkins_NoReg.jpg)
+
 
 ## Пример Allure отчета:
 ###### Главный экран (Owerwiev)
@@ -89,6 +94,13 @@ gradle allureServe
 <br>
 ![Video test](images/screens/video_test_fill_form.gif)
 
+## Пример интеграции тестов в сервис AllureTestOps:
+1. <i>Зарегистрированным</i>* пользователем на страницу проекта по ссылке: <b><a target="_blank" href="https://allure.autotests.cloud/project/3565/dashboards">AllureTestOps Project</a></b>
+
+###### Главный экран (Owerwiev)
+![Allure](images/screens/screen_allureTestOps1.jpg)
+###### Страница со списком тестов (Test cases)
+![Allure](images/screens/screen_allureTestOps2.jpg)
 ---------
 ###### todo
 
@@ -96,8 +108,5 @@ gradle allureServe
 После завершения сборки специальный Telegram-бот отправляет сообщение с отчетом.
 Чтобы видеть его увидеть, вступите (временно) в группу `OlgaKos Bot_Group`
 
-## AllureTestOps
-in work https://allure.autotests.cloud/project/3565/dashboards
-
 ------------
-ver 2023-07-25 home1
+ver 2023-07-26 office1
