@@ -34,8 +34,8 @@ https://arivistika.ru/ (продажа курсов ВЭД)
 - Библиотека модульного тестирования: `JUnit 5`
 - `Jenkins` выполняет удаленный запуск тестов в графическом интерфейсе. Установки дополнительных приложений на компьютер пользователя не требуется.
 - `Selenoid` запускает браузер с тестами в контейнерах `Docker` (и записывает видео)
-- Фреймворк`Allure Report` собирает графический отчет о прохождении тестов
-- Пример интеграции с `AllureTestOps`, (коммерческим) сервисом удаленного запуска и сортировки автотестов. AllureTestOps это Allure Report c расширенным функционалом
+- Фреймворк `Allure Report` собирает графический отчет о прохождении тестов
+- Пример интеграции с `AllureTestOps` - (коммерческим) сервисом удаленного запуска и сортировки автотестов. AllureTestOps это Allure Report c расширенным функционалом
 - После завершения тестов `Telegram Bot` отправляет в `Telegram` краткий вариант Allure Report
 
 ## Tests:
@@ -72,13 +72,12 @@ gradle allureServe
 <br>Результат: откроется страница с отчетом Allure Report
 <br>* Незарегистрированным пользователем можно открывть и изучить последний ранее сформированный отчет (стрелка №2 на скриншоте)
 <br>** NB! Срок хранения сборки на сервере ~60 дней. Ссылка может оказаться недоступной после 26.09.2023 :(
-
-![Jenkins](images/screens/screen_jenkins_ar.jpg)
-![Jenkins](images/screens/screen_jenkins_Reg.jpg)
+![Jenkins](images/screens/screen_jenkins_Reg.png)
 ![Jenkins](images/screens/screen_jenkins_NoReg.jpg)
 
-
 ## Пример Allure отчета:
+<br>Образец:
+<br>
 ###### Главный экран (Owerwiev)
 ![Allure](images/screens/screen_allure1.jpg)
 ###### Страница со списком тестов (Suites)
@@ -89,14 +88,15 @@ gradle allureServe
 ![Allure](images/screens/screen_failed.jpg)
 
 ## Видео тестов
-Видеозапись каждого теста генерируется с помощью `Selenoid`, после успешного запуска контейнера c тестами в `Docker`.
+Видеозапись каждого теста генерируется с помощью `Selenoid` после успешного запуска контейнера c тестами в `Docker`.
 <br>Образец:
 <br>
 ![Video test](images/screens/video_test_fill_form.gif)
 
 ## Пример интеграции тестов в сервис AllureTestOps:
-1. <i>Зарегистрированным</i>* пользователем на страницу проекта по ссылке: <b><a target="_blank" href="https://allure.autotests.cloud/project/3565/dashboards">AllureTestOps Project</a></b>
-
+<i>Зарегистрированным</i> пользователем на страницу проекта по ссылке: <b><a target="_blank" href="https://allure.autotests.cloud/project/3565/dashboards">AllureTestOps Project</a></b>
+<br>Образец:
+<br>
 ###### Главный экран (Owerwiev)
 ![Allure](images/screens/screen_allureTestOps1.jpg)
 ###### Страница со списком тестов (Test cases)
