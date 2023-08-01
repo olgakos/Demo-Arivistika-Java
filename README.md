@@ -67,11 +67,11 @@ gradle allureServe
 <p>Результат: откроется страница с отчетом Allure Report
 </details>
 
-### Вариант 2. Удаленный запуск тестов (в Jenkins)
+### Вариант 2. Удаленный запуск тестов (<b><a target="_blank" href="https://jenkins.autotests.cloud/job/Demo-Arivistika-Java/">Jenkins</a></b>)
 <details>
    <summary>Краткая инструкция</summary>
    
-1. <i>Зарегистрированным</i>* пользователем перейти** на страницу сборки проекта по ссылке: <b><a target="_blank" href="https://jenkins.autotests.cloud/job/Demo-Arivistika-Java/">Jenkins</a></b>
+1. <i>Зарегистрированным</i>* пользователем перейти** на страницу сборки проекта по ссылке (выше): 
 2. Выбрать желаемые "параметры сборки" в графическом интерфейсе или оставить как есть.
 3. Запустить выполнение тестов кнопкой "Собрать..."
 4. Убедиться, что в блоке История сборок появилась новая запись.
@@ -86,9 +86,6 @@ gradle allureServe
 </details>
 
 ## Пример Allure отчета:
-<details>
-   <summary>Скриншоты с комментариями</summary>
-   
 ###### Главный экран (Owerwiev)
 ![Allure](images/screens/screen_allure1.jpg)
 ###### Страница со списком тестов (Suites)
@@ -97,7 +94,7 @@ gradle allureServe
 ![Allure](images/screens/screen_passed.jpg)
 ###### Пример описания упавшего теста
 ![Allure](images/screens/screen_failed.jpg)
-</details>
+
 
 ## Пример видео прохождения тестов:
 Видеозапись каждого теста генерируется с помощью `Selenoid` после успешного запуска контейнера c тестами в `Docker`.
@@ -105,23 +102,20 @@ gradle allureServe
 ![Video test](images/screens/video_test_fill_form.gif)
 
 ## Пример интеграции тестов в сервис AllureTestOps:
-<details>
-   <summary>Скриншоты с комментариями</summary>
-<br>  
+
 <i>Зарегистрированным</i> пользователем перейти на страницу проекта по ссылке: <b><a target="_blank" href="https://allure.autotests.cloud/project/3565/dashboards">AllureTestOps Project</a></b>. Или см. скриншоты ниже:  
    
 ###### Главный экран (Owerwiev)
 ![Allure](images/screens/screen_allureTestOps1.jpg)   
 ###### Страница со списком тестов (Test cases)
 ![Allure](images/screens/screen_allureTestOps2.jpg)
-</details>
+
 
 ------------
 ##### todo
-## Jira
-## Отчет в Telegram
+* Отчет в Telegram
 После завершения сборки специальный Telegram-бот отправляет сообщение с отчетом.
 Чтобы видеть его увидеть, вступите (временно) в группу `OlgaKos Bot_Group`
-
+* Jira
 ------------
-ver 2023-07-27 home1
+ver 2023-08-01 home1
